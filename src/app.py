@@ -7,7 +7,7 @@ st.set_page_config(page_title="Disease Predictor", page_icon="🩺", layout="cen
 st.write("App loaded successfully.")
 
 # Load model + encoder
-data = joblib.load("disease_model.joblib")
+data = joblib.load("models/disease_model.joblib")
 model = data['model']
 mlb = data['mlb']
 
@@ -36,3 +36,4 @@ if st.button("Predict"):
             st.write(f"**{model.classes_[i]}** — {probs[i] * 100:.2f}%")
 
         st.info("Not for medical use.")
+
